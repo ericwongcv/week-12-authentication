@@ -7,6 +7,7 @@ const csurf = require('csurf');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 
+// git import ValidationError from sequelize
 const { ValidationError } = require('sequelize');
 
 // check if current environment is production
