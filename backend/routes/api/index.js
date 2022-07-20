@@ -1,10 +1,20 @@
 // backend/routes/api/index.js
+
+// import express and apply router method
 const router = require('express').Router();
 
-// // test setup
-// router.post('/test', (req, res) => {
-//     res.json({ requestBody: req.body });
-// });
+// import sessionRouter and usersRouter
+const sessionRouter = require('./session.js');
+const usersRouter = require('./users.js')
+
+// use sessionRouter and usersRouter
+router.use('/session', sessionRouter);
+router.use('/users', usersRouter);
+
+// test setup
+router.post('/test', (req, res) => {
+    res.json({ requestBody: req.body });
+});
 
 // // test auth middleware. Check for token cookie.
 // // GET /api/set-token-cookie
